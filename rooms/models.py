@@ -52,7 +52,7 @@ class Photo(core_models.TimeStampedModel):
     """ Photo Model Definition """
     
     caption = models.CharField(max_length=80)
-    file = models.ImageField()
+    file = models.ImageField(upload_to="room_photos") # upload_to는 uploads 폴더안의 어떤 폴더에다가 사진을 업로드 할것인지
     # 가져올 항목을 String 형식으로 하게되면 상하관계가 필요없으며, importing도 할 필요가 없다.
     room = models.ForeignKey("Room",related_name="photos" , on_delete=models.CASCADE)
     

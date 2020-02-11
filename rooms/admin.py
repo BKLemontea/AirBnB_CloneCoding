@@ -18,10 +18,17 @@ class ItemAdmin(admin.ModelAdmin):
     
     pass
 
+# Inline Admin은 admin 안데 또다른 admin을 넣는 방법이다.
+class PhotoInline(admin.TabularInline):
+# class PhotoInline(admin.StackedInline):
+    model = models.Photo
+
 @admin.register(models.Room)
 class RoomAdmin(admin.ModelAdmin):
     
     """ Room Admin Definition """
+    
+    inlines= (PhotoInline,)
     
     fieldsets = (
         (
@@ -110,6 +117,12 @@ class RoomAdmin(admin.ModelAdmin):
         "city",
         "country",
     )
+    
+    # 사용자가 많아짐에 따라 리스트가 엄청 길어질건데 
+    # raw_id_fields는 user admin을 사용하여 host를 검색할 수 있게 해준다.
+    raw_id_fields =(
+        "host",
+        )
     
     search_fields = (
         "=city",

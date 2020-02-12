@@ -82,9 +82,13 @@ class Room(core_models.TimeStampedModel):
     amenities = models.ManyToManyField("Amenity",related_name="rooms" , blank=True) # 다대다의 관계
     facilities = models.ManyToManyField("Facilitiy",related_name="rooms" , blank=True)
     house_rule = models.ManyToManyField("HouseRule",related_name="rooms" , blank=True)
-    
+
     def __str__(self):
         return self.name
+    
+    def save(self, *args, **kwargs):
+        self.city = str.capitalize(self.city)
+        super().save(*args, **kwargs)
     
     def total_rating(self):
         all_reviews = self.reviews.all()

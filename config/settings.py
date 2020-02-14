@@ -40,7 +40,8 @@ DJANGO_AOOS = [
 ]
 
 THIRD_PARTY_APPS = [
-    "django-countries"
+    "django_countries",
+    "django_seed"
 ]
 
 PROJECT_APPS =[

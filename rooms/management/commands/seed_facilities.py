@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from django_seed import Seed
+# from django_seed import Seed
 from rooms.models import Facilitiy
 
 class Command(BaseCommand):

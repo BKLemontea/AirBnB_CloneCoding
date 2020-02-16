@@ -30,7 +30,7 @@ class Reservation(core_models.TimeStampedModel):
     
     def in_progress(self):
         now = timezone.now().date()
-        return now > self.check_in and now < self.check_out
+        return now >= self.check_in and now <= self.check_out
     
     in_progress.boolean = True # 이걸로 글자형태가 아닌 아이콘으로 바꼈을 것이다.
     

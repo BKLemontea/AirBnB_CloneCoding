@@ -71,7 +71,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")], #템플릿을 어디서 찾을 것인가?
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

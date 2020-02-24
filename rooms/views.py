@@ -1,6 +1,6 @@
-from django.views.generic import ListView
-from django.urls import reverse
-from django.shortcuts import render,redirect
+from django.views.generic import ListView, DetailView
+# from django.http import Http404
+# from django.shortcuts import render
 from . import models
 
 class HomeView(ListView):
@@ -20,11 +20,22 @@ class HomeView(ListView):
         return context
     """
     
+
+# function 기반 view
+"""
 def room_detail(request,pk):
     try:
         room = models.Room.objects.get(pk=pk)
         return render(request, "rooms/detail.html", {"room":room})
     except models.Room.DoesNotExist:
-        return redirect(reverse("core:home"))
-        
+        raise Http404()
+"""
+
+# class 기반 view
+class RoomDetail(DetailView): #위와 다르게 404에러가 나면 장고가 알아서 Not Found 페이지로 보내준다.
+    
+    """ RommDetail Definition """
+    
+    model = models.Room
+    
         

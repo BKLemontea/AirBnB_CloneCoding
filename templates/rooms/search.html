@@ -14,7 +14,7 @@
     <form method="get" action="{% url "rooms:search" %}">
         <div>
             <label for="city">City</label>
-            <input value={{city}} id="city" name="city" placeholder="Search by City" />
+            <input value="{{city}}" id="city" name="city" placeholder="Search By City" />
         </div>
 
         <div>
@@ -78,12 +78,12 @@
         </div>
 
         <div>
-            <label for="super_host">By Superhost Only?</label>
+            <label for="superhost">By Superhost Only?</label>
             <input 
                 type="checkbox" 
-                name="super_host" 
-                id="super_host" 
-                {% if super_host %}
+                name="superhost" 
+                id="superhost" 
+                {% if superhost %}
                     checked
                 {% endif %} 
             />
@@ -133,6 +133,10 @@
         <button>Search</button>
     </form>
 
-    <h4>Searching By {{city}}</h4>
+    <h3>Results</h3>
+
+    {% for room in rooms %}
+        <h3>{{room.name}}</h3>
+    {% endfor %}
 
 {% endblock content %}

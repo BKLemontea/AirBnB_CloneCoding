@@ -40,7 +40,8 @@ class RoomAdmin(admin.ModelAdmin):
                     "country",
                     "city",
                     "address",
-                    "price"
+                    "price",
+                    "room_type",
                 )
             },
         ),

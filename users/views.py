@@ -44,3 +44,4 @@ class SignUpView(FormView):
             login(self.request, user)
             
         return super().form_valid(form)
+        

@@ -33,7 +33,7 @@ class Command(BaseCommand):
         creadted_clean = flatten(list(creadted_photos.values()))
         
         amenities = room_models.Amenity.objects.all()
-        facilities = room_models.Facilitiy.objects.all()
+        facilities = room_models.Facility.objects.all()
         rules = room_models.HouseRule.objects.all()
         
         for pk in creadted_clean:
@@ -55,6 +55,6 @@ class Command(BaseCommand):
             for r in rules:
                 magic_number = random.randint(0,15)
                 if magic_number % 2 == 0:
-                    room.house_rule.add(r)
+                    room.house_rules.add(r)
                     
         self.stdout.write(self.style.SUCCESS(f"{number} rooms created!!"))

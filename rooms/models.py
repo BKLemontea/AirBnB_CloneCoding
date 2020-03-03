@@ -34,9 +34,9 @@ class Amenity(AbstractItem):
     class Meta:
         verbose_name_plural = "Amenities"
 
-class Facilitiy(AbstractItem):
+class Facility(AbstractItem):
     
-    """ Facilitiy Model Definition """
+    """ Facility Model Definition """
     
     class Meta:
         verbose_name_plural = "Facilities"
@@ -81,8 +81,8 @@ class Room(core_models.TimeStampedModel):
     host = models.ForeignKey("users.User",related_name="rooms" ,on_delete=models.CASCADE) # 다대일의 관계 , CASCADE(폭포수) 연관되어있는 것들을 모두 삭제함
     room_type = models.ForeignKey("RoomType",related_name="rooms" , on_delete=models.SET_NULL, null=True)
     amenities = models.ManyToManyField("Amenity",related_name="rooms" , blank=True) # 다대다의 관계
-    facilities = models.ManyToManyField("Facilitiy",related_name="rooms" , blank=True)
-    house_rule = models.ManyToManyField("HouseRule",related_name="rooms" , blank=True)
+    facilities = models.ManyToManyField("Facility",related_name="rooms" , blank=True)
+    house_rules = models.ManyToManyField("HouseRule",related_name="rooms" , blank=True)
 
     def __str__(self):
         return self.name

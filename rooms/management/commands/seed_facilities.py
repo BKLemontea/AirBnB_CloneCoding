@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 # from django_seed import Seed
-from rooms.models import Facilitiy
+from rooms.models import Facility
 
 class Command(BaseCommand):
     
@@ -32,6 +32,6 @@ class Command(BaseCommand):
         ]
         
         for a in facilities:
-            Facilitiy.objects.create(name=a)
+            Facility.objects.create(name=a)
         self.stdout.write(self.style.SUCCESS(f'{len(facilities)} Facilities created!'))
             

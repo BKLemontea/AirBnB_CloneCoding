@@ -24,7 +24,7 @@ class SearchForm(forms.Form):
         required=False,
     )
     facilities = forms.ModelMultipleChoiceField(
-        queryset=models.Facilitiy.objects.all(),
+        queryset=models.Facility.objects.all(),
         widget=forms.CheckboxSelectMultiple,
         required=False,
     )

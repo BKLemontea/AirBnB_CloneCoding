@@ -3,7 +3,7 @@ from django.utils.html import mark_safe
 from . import models
 
 # Register your models here.
-@admin.register(models.RoomType, models.Facilitiy, models.Amenity, models.HouseRule)
+@admin.register(models.RoomType, models.Facility, models.Amenity, models.HouseRule)
 class ItemAdmin(admin.ModelAdmin):
 
     """ Item Admin Definition """
@@ -75,7 +75,7 @@ class RoomAdmin(admin.ModelAdmin):
                 "fields": (
                     "amenities",
                     "facilities",
-                    "house_rule"
+                    "house_rules"
                 )
             },
         ), 
@@ -115,7 +115,7 @@ class RoomAdmin(admin.ModelAdmin):
         "room_type",
         "amenities",
         "facilities",
-        "house_rule",
+        "house_rules",
         "city",
         "country",
     )
@@ -135,7 +135,7 @@ class RoomAdmin(admin.ModelAdmin):
     filter_horizontal = (
         "amenities",
         "facilities",
-        "house_rule",
+        "house_rules",
     )
     
     #def save_model(self, request, obj, form, change):

@@ -2,43 +2,80 @@
 @tailwind components;
 
 .search-box {
-    transition: box-shadow 0.2s linear;
+  transition: box-shadow 0.2s linear;
 }
 
 .nav_link {
-    @apply ml-6 border-b-2 border-white h-full flex items-center;
-    a {
-        @apply py-10 px-5;
-    }
-    &:hover {
-        @apply border-gray-600;
-    }
+  @apply ml-6 border-b-2 border-white h-full flex items-center;
+  a {
+      @apply py-10 px-5;
+  }
+  &:hover {
+      @apply border-gray-600;
+  }
 }
 
 .btn {
-    @apply text-center rounded-sm py-5 font-light text-lg w-full;
+  @apply text-center rounded-sm py-5 font-light text-lg w-full;
 }
   
 input {
-    @apply rounded-sm py-5 font-light text-lg w-full text-left border border-gray-600 px-5;
-    &:focus {
-      @apply outline-none border-teal-500;
-    }
+  @apply rounded-sm py-5 font-light text-lg w-full text-left border border-gray-600 px-5;
+  &:focus {
+    @apply outline-none border-teal-500;
+  }
 }
 
 form {
-    .input {
-        @apply mb-3 w-full;
-        &.has_error {
-          input {
-            @apply bg-red-200 border-gray-600;
-            &:focus {
-              @apply border-gray-600;
-            }
+  .input {
+      @apply mb-3 w-full;
+      &.has_error {
+        input {
+          @apply bg-red-200 border-gray-600;
+          &:focus {
+            @apply border-gray-600;
           }
         }
-      @apply mb-3;
-    }
-  }  
+      }
+    @apply mb-3;
+  }
+}
+
+@keyframes messageFadeIn {
+  0%{
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  5%{
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  95%{
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+.message{
+  // 애니메이션이 끝나면 투명도는 다시 1로 돌아온다.(값 저장X)
+  // forwards는 애니메이션이 끝난 후에도 그 값을 유지시켜준다.
+  animation: messageFadeIn 5s ease-in-out forwards;
+  &.error{
+    @apply bg-red-600;
+  }
+  &.info{
+    @apply bg-blue-500;
+  }
+  &.success{
+    @apply bg-green-500;
+  }
+  &.warning{
+    @apply bg-yellow-400;
+  }
+}
   
 @tailwind utilities;

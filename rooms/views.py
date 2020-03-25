@@ -1,8 +1,10 @@
 from django.http import Http404
 from django.views.generic import ListView, DetailView, View, UpdateView
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django_countries import countries
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from users import mixins as user_mixins
 from . import models, forms
 
@@ -143,4 +145,24 @@ class RoomPhotosView(user_mixins.LoggedInOnlyView, DetailView):
         if room.host.pk != self.request.user.pk:
             raise Http404()
         return room
-        
+
+@login_required  
+def delete_photo(request, room_pk, photo_pk):
+    user = request.user
+    try:
+        room = models.Room.objects.get(pk=room_pk)
+        if room.host.pk != user.pk:
+            messages.error(request, "Can't delete that photo")
+        else:
+            """
+            photo = models.Photo
+            photo.delete()
+            아래 방법과는 다르게 특정 사진만 삭제 할 수 있다.
+            """
+            # 필터에 속한 모든 사진을 삭제한다. 이 경우에는 pk에 해당하는 사진이 하나 뿐이니 위와 동일하게 작동된다.
+            models.Photo.objects.filter(pk=photo_pk).delete()
+            messages.success(request, "Photo Deleted")
+        return redirect(reverse("rooms:photos", kwargs={'pk':room_pk}))
+    except models.Room.DoesNotExist:
+        return redirect(reverse("core:home"))
+    

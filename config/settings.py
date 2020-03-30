@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-DJANGO_AOOS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +54,7 @@ PROJECT_APPS =[
     "conversations.apps.ConversationsConfig",
 ]
 
-INSTALLED_APPS = DJANGO_AOOS + PROJECT_APPS
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

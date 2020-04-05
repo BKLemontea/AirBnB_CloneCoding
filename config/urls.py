@@ -22,6 +22,7 @@ urlpatterns = [
     path("", include("core.urls", namespace="core")), # namespace의 이름은 core/urls.py 의 app_name과 같아야 한다.
     path("rooms/", include("rooms.urls", namespace="rooms")),
     path("users/", include("users.urls", namespace="users")),
+    path("reservations/", include("reservations.urls", namespace="reservations")),
     path('admin/', admin.site.urls),
 ]
 

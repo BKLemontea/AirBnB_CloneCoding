@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-17 16:39+0900\n"
+"POT-Creation-Date: 2020-04-19 16:43+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\templates\base.html:25
-msgid "Search by City"
+#: .\templates\base.html:22
+#, fuzzy
+#| msgid "Search by City"
+msgid "Search By City"
 msgstr "Buscar por Ciudad"
 
 #: .\templates\partials\footer.html:5
@@ -29,6 +31,14 @@ msgstr "Por davor no nos copies"
 #: .\templates\partials\footer.html:7
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
+
+#: .\templates\rooms\room_detail.html:34
+msgid "Remove from Favourites"
+msgstr "Remove from Favourites"
+
+#: .\templates\rooms\room_detail.html:36
+msgid "Save to Favourites"
+msgstr "Save to Favourites"
 
 #: .\templates\rooms\room_list.html:26
 #, python-format

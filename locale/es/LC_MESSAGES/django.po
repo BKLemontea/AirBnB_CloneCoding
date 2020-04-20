@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-19 16:43+0900\n"
+"POT-Creation-Date: 2020-04-20 20:05+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,13 +32,37 @@ msgstr "Por davor no nos copies"
 msgid "All rights reserved"
 msgstr "Todos los derechos reservados"
 
-#: .\templates\rooms\room_detail.html:34
-msgid "Remove from Favourites"
-msgstr "Remove from Favourites"
+#: .\templates\partials\nav.html:7
+msgid "Stop hosting"
+msgstr ""
 
-#: .\templates\rooms\room_detail.html:36
-msgid "Save to Favourites"
-msgstr "Save to Favourites"
+#: .\templates\partials\nav.html:9
+msgid "Start hosting"
+msgstr ""
+
+#: .\templates\partials\nav.html:14
+msgid "Create Room"
+msgstr ""
+
+#: .\templates\partials\nav.html:16
+msgid "Favs"
+msgstr ""
+
+#: .\templates\partials\nav.html:17
+msgid "Profile"
+msgstr ""
+
+#: .\templates\partials\nav.html:18
+msgid "Log out"
+msgstr ""
+
+#: .\templates\partials\nav.html:20
+msgid "Log in"
+msgstr ""
+
+#: .\templates\partials\nav.html:21
+msgid "Sign Up"
+msgstr ""
 
 #: .\templates\rooms\room_list.html:26
 #, python-format
